@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+body{
+    font-family: sans-serif;
+}
+p{
+    text-align: justify;
+    margin-right: 20px;
+}
+.top{
+    background: #0f0f0f;
+    line-height: 50px;
+    color: aliceblue;    
+}
+.sidebar{
+    position: fixed;
+    background: #0f0f0f;
+    color: aliceblue;
+    left: -200px;
+    width: 200px;
+    height: 100%;
+    transition: all .4s ease;
+}
+.sidebar header{
+    font-size: 22px;
+    padding-left: 40px;
+    background-color: #235d5f;
+    line-height: 70px;
+    user-select: none;
+}
+.sidebar li a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: aliceblue;
+    padding-left: 40px;
+    border-top: 1px solid #8bfbff;
+    border-bottom: 1px solid black;
+    box-sizing: border-box;
+    transition: .4s;
+}
+.sidebar li a:hover{
+    padding-left: 55px;
+    box-shadow: 0 0 5px #8bfbff;
+}
+#check{
+    display: none;
+}
+label #btn, label #cancel{
+    position: absolute;
+    cursor: pointer;
+    background-color: #235d5f;
+    border-radius: 3px;
+}
+label #btn{
+    left: 40px;
+    top: 55px;
+    font-size: 35px;
+    color: aliceblue;
+    padding: 6px 12px;
+    transition: all .4s ease;
+}
+label #cancel{
+    z-index: 1111;
+    left: -160px;
+    top: 17px;
+    font-size: 25px;
+    color: #0a0a0a;
+    padding: 2px 9px;
+    transition: all .4s ease;
+}
+#check:checked ~ .sidebar{
+    left: 0;
+}
+#check:checked ~ label #btn{
+    left: 200px;
+    opacity: 0;
+    pointer-events: none;
+}
+#check:checked ~ label #cancel{
+    left: 40px;
+    opacity: 100;
+}
+section{
+    background-color: #000d21;
+    background-position: center;
+    background-size: cover;
+    color: aliceblue;
+    height: 100vh;
+    padding: 60px 0 0 40px;
+    transition: all .4s;
+}
+#check:checked ~ section{
+    margin-left: 200px;
+    padding: 10px 0 0 10px;
+}
