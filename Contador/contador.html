@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contador</title>
+    <script src="cont.js"></script>
+    <link rel="stylesheet" href="countStyle.css">
+</head>
+
+<body>
+    <header>
+        <h1>Contador</h1>
+    </header>
+    <br>
+    <a href="../SidebarMenu1/Sidebar.html">Voltar</a>
+
+    <div class="count">
+        <h1 id="n" contenteditable="true">0</h1>
+
+        <div class="inc">
+            <button type="button" onclick="decrement()">-1</button>
+            <button type="button" onclick="increment()">+1</button>
+        </div>
+
+        <button type="button" onclick="reset()" id="reset">Reset</button>
+    </div>
+
+</body>
+
+</html>
