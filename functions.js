@@ -18,4 +18,5 @@ function novoItem(){
     //Inserindo os novos elementos no corpo da página
     document.body.appendChild(p);
     document.body.appendChild(btnAdd);
+    //Comentário
 }
