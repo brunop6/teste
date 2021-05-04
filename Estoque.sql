@@ -2,7 +2,7 @@ CREATE DATABASE Estoque
 GO
 USE Estoque
 GO
-
+--Teste de update GitHub
 CREATE TABLE Estoque
 (
 	id int identity(1,1) primary key,
