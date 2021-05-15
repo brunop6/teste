@@ -15,12 +15,18 @@
 
         //Instanciação do objeto options
         $options = new Options();
-        $options->setIsJavascriptEnabled(true);
+        
+        //Permissão para renderização de elementos externos
+        //$options->isRemoteEnabled(true)
+
         //Configuração da root para o diretório atual
         $options->setChroot(__DIR__);
 
         //Instanciação do objeto dompdf
         $dompdf = new Dompdf($options);
+
+        //Configurando a folha em tamanho A4 e formato retrato
+        $dompdf->setPaper('A4', 'portrait');
 
         //Armazenamento das saídas do arquivo em buffer
         ob_start();
