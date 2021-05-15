@@ -11,18 +11,23 @@
         require __DIR__.'/vendor/autoload.php';
 
         use Dompdf\Dompdf;
+        use Dompdf\Options;
 
-        //Instanciação do objeto dompfd
-        $dompdf = new Dompdf();
+        //Instanciação do objeto options
+        $options = new Options();
+        $options->setIsJavascriptEnabled(true);
+        //Configuração da root para o diretório atual
+        $options->setChroot(__DIR__);
 
-        $dompdf->loadHtml('
-        <h1>PDF gerado com PHP!</h1>
-        <ul>
-            <li>Top 1</li>
-            <li>Top 2</li>
-            <li>Top 3</li>
-        </ul>
-        ');
+        //Instanciação do objeto dompdf
+        $dompdf = new Dompdf($options);
+
+        //Armazenamento das saídas do arquivo em buffer
+        ob_start();
+        require 'arquivo.php';
+
+        //Envio do valor do buffer para a a classe
+        $dompdf->loadHtml(ob_get_clean());
 
         //Renderização do arquivo PDF
         $dompdf->render();
