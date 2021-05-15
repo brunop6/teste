@@ -1,6 +1,4 @@
 <?php
-use Estoque as GlobalEstoque;
-
 class Estoque{
         
         public function retornar_itens_em_falta(){
@@ -13,10 +11,7 @@ class Estoque{
         }
 
         public function gerar_lista_compras(){
-            $estoque = new GlobalEstoque();
-            if($estoque->retornar_itens_em_falta() != null){
-                header("Location: ./listaCompras/lista_compras.php?opt=2");
-            }
+            header('Location: ../listaCompras/lista_compras_pdf.php');
         }
     }
 ?>

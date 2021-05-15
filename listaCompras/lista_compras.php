@@ -7,24 +7,9 @@
     <title>Lista de Compras</title>
 </head>
 <body>
-    <h1>Itens em Falta no Estoque</h1>
-    <hr>
     <?php
         require_once '../classes/Estoque.php';
-
         $estoque = new Estoque();
-
-        $itens = $estoque->retornar_itens_em_falta();
-        $itens = array('Farinha de trigo', 'Ovos', 'Leite Condensado');
-
-        foreach($itens as $i => $row){
-            echo "
-                <p>
-                    <input type='checkbox' id='item$i'>
-                    <label for='item'>$row</label>
-                </p>
-            ";
-        }
 
         if(!isset($_GET['opt'])){
             $opt = 1;
@@ -32,8 +17,25 @@
             $opt = $_GET['opt'];
         }
 
-        if($opt == 2){
-            header("Location: ./criaPdf.php");
+        if($estoque->retornar_itens_em_falta() != null){
+            echo '<h1>Itens em Falta no Estoque</h1> <hr>';
+
+            $itens = $estoque->retornar_itens_em_falta();
+            $itens = array('Farinha de trigo', 'Ovos', 'Leite Condensado');
+            foreach($itens as $i => $row){
+                echo "
+                    <p>
+                        <input type='checkbox' id='item$i'>
+                        <label for='item'>$row</label>
+                    </p>
+                ";
+            }
+
+            if($opt == 2){
+                $estoque->gerar_lista_compras();
+            }
+        }else{
+            echo '<h2>Seu Estoque está em dia!</h2>';
         }
     ?>
 </body>
