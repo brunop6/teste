@@ -30,7 +30,7 @@
 
         //Armazenamento das saídas do arquivo em buffer
         ob_start();
-        require 'arquivo.php';
+        require 'lista_compras.php';
 
         //Envio do valor do buffer para a a classe
         $dompdf->loadHtml(ob_get_clean());
