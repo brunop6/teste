@@ -37,6 +37,7 @@
             <input type="button" onclick="rodarPHP()" value="PHP">
             <input type="button" onclick="rodarJS()" value="JavaScript">
         </p>
+        <!--Teste git-->
     </form>
 </body>
 </html>
