@@ -11,6 +11,13 @@
     <header>
         <h1>Teste dos Botões</h1>
     </header>
-    <button id="add" onclick="novoItem()">Inserir Ingrediente</button>
+    <form action="" id="formulario">
+        <input type="text" name="nomeReceita" placeholder="Nome da Receita">
+        
+        <input type="text" name="ingrediente" placeholder="Ingrediente">
+        <button id="add" onclick="novoItem()">Inserir Ingrediente</button>
+        <p><input type="submit" value="Cadastrar" id="cadastrar"></p>
+    </form>
+    
 </body>
 </html>
